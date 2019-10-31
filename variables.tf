@@ -4,12 +4,10 @@ variable "location" {
 
 variable "resource_group_name" {
   description = "(Required) The name of the resource group where the load balancer resources will be placed."
-  default     = "azure_lb-rg"
 }
 
 variable "prefix" {
   description = "(Required) Default prefix to use with your resource names."
-  default     = "azure_lb"
 }
 
 variable "remote_port" {
@@ -37,7 +35,7 @@ variable "frontend_name" {
   default     = "myPublicIP"
 }
 
-variable "public_ip_address_allocation" {
+variable "public_ip_allocation_method" {
   description = "(Required) Defines how an IP address is assigned. Options are Static or Dynamic."
   default     = "static"
 }
