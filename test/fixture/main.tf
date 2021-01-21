@@ -4,9 +4,9 @@ resource "random_id" "rg_name" {
 
 module "mylb" {
   source              = "../../"
-  resource_group_name = "${random_id.rg_name.hex}"
-  location            = "${var.location}"
-  prefix              = "${random_id.rg_name.hex}"
+  resource_group_name = random_id.rg_name.hex
+  location            = var.location
+  prefix              = random_id.rg_name.hex
 
   "remote_port" {
     ssh = ["Tcp", "22"]
@@ -19,6 +19,6 @@ module "mylb" {
 
 module "network" {
   source              = "Azure/network/azurerm"
-  location            = "${var.location}"
-  resource_group_name = "${random_id.rg_name.hex}"
+  location            = var.location
+  resource_group_name = random_id.rg_name.hex
 }

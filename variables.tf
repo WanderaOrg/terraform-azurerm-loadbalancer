@@ -41,7 +41,7 @@ variable "public_ip_allocation_method" {
 }
 
 variable "tags" {
-  type = "map"
+  type = map
 
   default = {
     source = "terraform"
@@ -49,7 +49,7 @@ variable "tags" {
 }
 
 variable "type" {
-  type        = "string"
+  type        = string
   description = "(Optional) Defined if the loadbalancer is private or public"
   default     = "public"
 }
